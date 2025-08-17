@@ -1,6 +1,6 @@
 # Various needed programs
 GIT = git
-PYTHON3 = python3
+PYTHON3 = py
 SED = sed
 ZIP = zip
 
@@ -13,7 +13,7 @@ FIND_FILES = bin/find-files
 MK_ARCHIVE = bin/mk-archive
 
 # Project details
-PROJECT_NAME = firs
+PROJECT_NAME = firsBC
 
 # lang is not copied to generated currently in FIRS, unlike RH, IH etc - could be changed
 LANG_DIR = generated/lang
@@ -65,7 +65,7 @@ tar: $(TAR_FILE)
 html_docs: $(HTML_DOCS)
 
 # remove the @ for more verbose output (@ suppresses command output)
-_V ?= @
+_V ?= 
 
 $(LANG_DIR): $(shell $(FIND_FILES) --ext=.py --ext=.pynml --ext=.lng src)
 	$(_V) $(PYTHON3) src/render_lang.py $(ARGS)
